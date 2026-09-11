@@ -45,7 +45,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               At <strong className="text-[#0b1a48] font-bold">GanitGridd</strong>, we believe that every student has the potential to excel when guided through clear conceptual grids and scientific problem-solving frameworks. We nurture curiosity, build rigorous problem-solving habits, and empower learners to become confident high achievers.
             </p>
 
-            <div className="pt-2 grid grid-cols-2 gap-4 text-xs">
+            <div className="pt-2 grid grid-cols-1 min-[480px]:grid-cols-2 gap-4 text-xs">
               <div className="p-3 bg-blue-50/60 rounded-xl border border-blue-100">
                 <span className="block font-bold text-[#0b1a48]">Proven Pedagogy</span>
                 <span className="text-slate-500">Comprehensive syllabus coverage with bilingual materials</span>

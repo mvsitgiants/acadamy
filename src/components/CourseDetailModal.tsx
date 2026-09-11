@@ -16,12 +16,12 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
   if (!course) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-slate-200 flex flex-col max-h-[90vh]">
-        
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="bg-white rounded-t-3xl sm:rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-slate-200 flex flex-col max-h-[92dvh] sm:max-h-[90vh]">
+
         {/* Header */}
-        <div className="bg-[#0b1a48] text-white p-6 flex items-start justify-between">
-          <div>
+        <div className="bg-[#0b1a48] text-white p-5 sm:p-6 flex items-start justify-between gap-3 flex-shrink-0">
+          <div className="min-w-0">
             <span className="text-[10px] font-bold text-amber-300 uppercase tracking-widest block mb-1">
               Official Syllabus & Batch Roadmap
             </span>
@@ -32,14 +32,15 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
 
           <button
             onClick={onClose}
-            className="text-slate-300 hover:text-white p-1 rounded-lg"
+            aria-label="Close"
+            className="text-slate-300 hover:text-white p-1 rounded-lg flex-shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Scrollable Content */}
-        <div className="p-6 overflow-y-auto space-y-6 text-slate-700 text-xs sm:text-sm">
+        <div className="p-5 sm:p-6 overflow-y-auto overscroll-contain space-y-6 text-slate-700 text-xs sm:text-sm">
           
           {/* Overview */}
           <div className="space-y-2">
@@ -103,10 +104,10 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
         </div>
 
         {/* Footer Action */}
-        <div className="p-5 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-t border-slate-200 bg-slate-50 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-2 flex-shrink-0">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900"
+            className="px-4 py-2.5 sm:py-2 text-xs font-semibold text-slate-600 hover:text-slate-900"
           >
             Close
           </button>
@@ -116,10 +117,10 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
               onClose();
               onEnrollNow(course.id);
             }}
-            className="px-6 py-2.5 rounded-full bg-[#0b1a48] hover:bg-blue-900 text-white text-xs font-bold transition-colors flex items-center space-x-2 shadow-md"
+            className="w-full sm:w-auto min-w-0 px-6 py-3 sm:py-2.5 rounded-full bg-[#0b1a48] hover:bg-blue-900 text-white text-xs font-bold transition-colors flex items-center justify-center space-x-2 shadow-md"
           >
-            <span>Enroll for {course.title}</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="truncate">Enroll for {course.title}</span>
+            <ArrowRight className="w-4 h-4 flex-shrink-0" />
           </button>
         </div>
 

@@ -20,26 +20,26 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
-        
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="bg-white rounded-t-3xl sm:rounded-3xl max-w-lg w-full max-h-[92dvh] sm:max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200">
+
         {/* Header */}
-        <div className="bg-[#0b1a48] text-white p-5 flex items-center justify-between">
-          <div>
-            <h3 className="font-extrabold text-base tracking-wide">
+        <div className="bg-[#0b1a48] text-white p-4 sm:p-5 flex items-center justify-between gap-3 flex-shrink-0">
+          <div className="min-w-0">
+            <h3 className="font-extrabold text-sm sm:text-base tracking-wide">
               Contact & Campus Visit
             </h3>
             <p className="text-[11px] text-blue-200">
               GanitGridd - Math & Science Academy • Gummidipoondi Branch
             </p>
           </div>
-          <button onClick={onClose} className="text-slate-300 hover:text-white p-1">
+          <button onClick={onClose} aria-label="Close" className="text-slate-300 hover:text-white p-1 flex-shrink-0">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Body */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6 overflow-y-auto overscroll-contain">
           {submitted ? (
             <div className="text-center py-6 space-y-3">
               <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
@@ -119,17 +119,17 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   ></textarea>
                 </div>
 
-                <div className="pt-2 flex justify-end space-x-2">
+                <div className="pt-2 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900"
+                    className="px-4 py-2.5 sm:py-2 text-xs font-semibold text-slate-600 hover:text-slate-900"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-6 py-2 rounded-full bg-[#0b1a48] hover:bg-blue-900 text-white text-xs font-bold transition-colors flex items-center space-x-1.5 shadow-md"
+                    className="w-full sm:w-auto px-6 py-3 sm:py-2 rounded-full bg-[#0b1a48] hover:bg-blue-900 text-white text-xs font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-md"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Send Message</span>

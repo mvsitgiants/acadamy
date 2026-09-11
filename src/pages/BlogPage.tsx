@@ -122,9 +122,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({
 
       {/* Filter and Search Bar */}
       <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
-        <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-          
-          <div className="flex flex-wrap items-center gap-1.5">
+        <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-slate-200 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+
+          <div className="flex md:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
             {[
               { id: 'all', label: 'All Articles' },
               { id: 'exam strategy', label: 'Exam Strategy' },
@@ -134,7 +134,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               <button
                 key={tab.id}
                 onClick={() => setSelectedCategory(tab.id)}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex-shrink-0 ${
                   selectedCategory === tab.id
                     ? 'bg-[#081747] text-white shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'

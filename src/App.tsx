@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NoticeTicker } from './components/NoticeTicker';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
@@ -53,6 +53,22 @@ export default function App() {
     category: '',
     title: ''
   });
+
+  // Lock background scrolling while any modal is open (prevents the page scrolling behind it on phones)
+  const anyModalOpen =
+    enrollModalOpen ||
+    selectedCourse !== null ||
+    accountModalOpen ||
+    contactModalOpen ||
+    selectedBlog !== null ||
+    resourceModal.isOpen;
+
+  useEffect(() => {
+    document.body.style.overflow = anyModalOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [anyModalOpen]);
 
   const navigateTo = (page: PageType) => {
     setCurrentPage(page);

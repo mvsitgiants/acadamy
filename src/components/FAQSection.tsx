@@ -194,8 +194,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenEnroll, onOpenCont
             )}
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+          {/* Category Filter Pills: horizontal scroll on phones instead of wrapping, to keep pill labels intact */}
+          <div className="flex sm:flex-wrap items-center justify-start sm:justify-center gap-2 pt-1 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
             {[
               { key: 'all', label: 'All Questions', icon: HelpCircle },
               { key: 'enrollment', label: 'Enrollment & Admission', icon: GraduationCap },
@@ -209,7 +209,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenEnroll, onOpenCont
                   key={tab.key}
                   id={`btn-faq-tab-${tab.key}`}
                   onClick={() => setActiveCategory(tab.key as any)}
-                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer ${
+                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer flex-shrink-0 ${
                     isActive
                       ? 'bg-[#081747] text-white shadow-xs'
                       : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900'
@@ -309,7 +309,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenEnroll, onOpenCont
           {/* Subtle Decorative Circle */}
           <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-blue-600/20 pointer-events-none blur-2xl"></div>
           
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
             <div className="space-y-1.5 max-w-xl">
               <span className="text-amber-400 text-xs font-extrabold uppercase tracking-wider">
                 Direct Academic Support
@@ -322,10 +322,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenEnroll, onOpenCont
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-col min-[420px]:flex-row items-center justify-center gap-3 w-full lg:w-auto">
               <a
                 href="tel:9442678741"
-                className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs flex items-center space-x-2 transition-colors"
+                className="w-full min-[420px]:w-auto justify-center px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs flex items-center space-x-2 transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
                 <span>Call 94426 78741</span>
@@ -334,7 +334,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenEnroll, onOpenCont
               <button
                 id="btn-faq-enroll"
                 onClick={onOpenEnroll}
-                className="px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] font-black text-xs transition-all shadow-md flex items-center space-x-1.5 cursor-pointer transform hover:-translate-y-0.5"
+                className="w-full min-[420px]:w-auto justify-center px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] font-black text-xs transition-all shadow-md flex items-center space-x-1.5 cursor-pointer transform hover:-translate-y-0.5"
               >
                 <span>Apply for Admission</span>
                 <ArrowRight className="w-3.5 h-3.5" />

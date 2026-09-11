@@ -14,13 +14,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Extra bottom padding on phones keeps the copyright clear of the floating chat buttons
   return (
-    <footer className="bg-black text-white py-14 border-t border-slate-800">
+    <footer className="bg-black text-white pt-12 pb-24 md:py-14 border-t border-slate-800">
       <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-x-6 gap-y-10 md:gap-10">
+
           {/* Col 1: Brand, Address, Contacts, Socials */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="col-span-2 lg:col-span-4 space-y-4">
             
             {/* White Logo Badge */}
             <div className="inline-block bg-white rounded-2xl p-2.5 shadow-sm">
@@ -58,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noreferrer"
-                className="w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-blue-600 transition-colors"
+                className="w-9 h-9 sm:w-7 sm:h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-blue-600 transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -71,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noreferrer"
-                className="w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-pink-600 transition-colors"
+                className="w-9 h-9 sm:w-7 sm:h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-pink-600 transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -84,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noreferrer"
-                className="w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+                className="w-9 h-9 sm:w-7 sm:h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
@@ -97,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 href="https://youtube.com" 
                 target="_blank" 
                 rel="noreferrer"
-                className="w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-red-600 transition-colors"
+                className="w-9 h-9 sm:w-7 sm:h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-red-600 transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -113,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
             <h4 className="font-bold text-sm text-white tracking-wide">
               Quick Link
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
+            <ul className="space-y-2.5 sm:space-y-2 text-[13px] sm:text-xs text-slate-300">
               <li>
                 <button onClick={() => handleNav('home')} className="hover:text-white transition-colors cursor-pointer">
                   Home
@@ -162,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
             <h4 className="font-bold text-sm text-white tracking-wide">
               Help Center
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
+            <ul className="space-y-2.5 sm:space-y-2 text-[13px] sm:text-xs text-slate-300">
               <li>
                 <button 
                   onClick={() => handleNav('faq')} 
@@ -193,8 +194,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
           </div>
 
           {/* Col 4: Location Map */}
-          <div className="lg:col-span-4">
-            <div className="rounded-xl overflow-hidden border border-slate-700 bg-slate-900 shadow-md">
+          <div className="col-span-2 md:col-span-4 lg:col-span-4">
+            <div className="md:max-w-md lg:max-w-none rounded-xl overflow-hidden border border-slate-700 bg-slate-900 shadow-md">
               <div className="relative aspect-4/3 w-full bg-slate-800">
                 {/* Visual Map Layout matching screenshot with landmarks */}
                 <div className="absolute inset-0 bg-[#e5e3df] p-3 flex flex-col justify-between select-none">

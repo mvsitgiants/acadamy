@@ -130,7 +130,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
 
       {/* Filter Tabs */}
       <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
-        <div className="bg-white rounded-2xl p-4 shadow-lg border border-slate-200 flex flex-wrap items-center gap-2 justify-center">
+        <div className="bg-white rounded-2xl p-4 shadow-lg border border-slate-200 flex items-center gap-2 justify-start sm:flex-wrap sm:justify-center overflow-x-auto no-scrollbar">
           {[
             { id: 'all', label: 'All Photos' },
             { id: 'classrooms', label: 'Smart Classrooms' },
@@ -141,7 +141,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             <button
               key={tab.id}
               onClick={() => setSelectedTag(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex-shrink-0 ${
                 selectedTag === tab.id
                   ? 'bg-[#081747] text-white shadow-xs'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
@@ -187,23 +187,23 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
 
       {/* Campus Visit Banner */}
       <div className="bg-[#081747] text-white py-12">
-        <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
             <h3 className="text-xl sm:text-2xl font-black">Want to visit our Gummidipoondi campus in person?</h3>
             <p className="text-xs sm:text-sm text-blue-200">
               Walk-in counseling and campus tours are available Monday to Sunday from 8:00 AM to 7:30 PM.
             </p>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-col min-[420px]:flex-row items-center gap-3 w-full md:w-auto">
             <button
               onClick={onOpenContact}
-              className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold text-white transition-colors cursor-pointer"
+              className="w-full min-[420px]:w-auto px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold text-white transition-colors cursor-pointer"
             >
               Get Directions
             </button>
             <button
               onClick={onOpenEnroll}
-              className="px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5 cursor-pointer"
+              className="w-full min-[420px]:w-auto justify-center px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5 cursor-pointer"
             >
               <span>Apply for Admission</span>
               <ArrowRight className="w-3.5 h-3.5" />

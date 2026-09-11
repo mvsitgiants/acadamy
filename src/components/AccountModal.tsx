@@ -21,27 +21,28 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
-        
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="bg-white rounded-t-3xl sm:rounded-3xl max-w-md w-full max-h-[92dvh] sm:max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200">
+
         {/* Header */}
-        <div className="bg-[#0b1a48] text-white p-5 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <User className="w-5 h-5 text-amber-400" />
-            <h3 className="font-extrabold text-base tracking-wide">
+        <div className="bg-[#0b1a48] text-white p-4 sm:p-5 flex items-center justify-between gap-3 flex-shrink-0">
+          <div className="flex items-center space-x-2 min-w-0">
+            <User className="w-5 h-5 text-amber-400 flex-shrink-0" />
+            <h3 className="font-extrabold text-sm sm:text-base tracking-wide">
               Student Portal Login
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="text-slate-300 hover:text-white p-1 rounded-lg"
+            aria-label="Close"
+            className="text-slate-300 hover:text-white p-1 rounded-lg flex-shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6 overflow-y-auto overscroll-contain">
           {loggedIn ? (
             <div className="space-y-4 text-center py-4">
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
@@ -105,7 +106,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose }) =
                 </div>
               </div>
 
-              <div className="flex items-center justify-between text-[11px]">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-[11px]">
                 <a href="#forgot" onClick={(e) => { e.preventDefault(); alert("OTP will be sent to your registered mobile."); }} className="text-blue-700 font-semibold hover:underline">
                   Forgot Password?
                 </a>

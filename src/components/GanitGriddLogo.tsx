@@ -18,15 +18,15 @@ export const GanitGriddLogo: React.FC<GanitGriddLogoProps> = ({
 
   const iconSizes = {
     sm: 'w-8 h-8',
-    md: 'w-10 h-10',
+    md: 'w-9 h-9 sm:w-10 sm:h-10',
     lg: 'w-14 h-14'
   };
 
   return (
-    <div className={`flex items-center space-x-3 select-none ${className}`}>
+    <div className={`flex items-center space-x-2.5 sm:space-x-3 select-none min-w-0 ${className}`}>
       {/* Math & Science Vector Icon Badge */}
       <div
-        className={`relative ${iconSizes[size]} rounded-2xl flex items-center justify-center p-1.5 shadow-sm transition-transform hover:scale-105 ${
+        className={`relative ${iconSizes[size]} flex-shrink-0 rounded-2xl flex items-center justify-center p-1.5 shadow-sm transition-transform hover:scale-105 ${
           isDark
             ? 'bg-gradient-to-br from-slate-900 to-[#0b1a48] border border-blue-500/30'
             : 'bg-gradient-to-br from-[#081747] via-[#0b2568] to-[#1e3a8a] text-white shadow-md'
@@ -110,7 +110,7 @@ export const GanitGriddLogo: React.FC<GanitGriddLogoProps> = ({
         <div className="flex flex-col text-left">
           <div className="flex items-center space-x-1 leading-none">
             <span
-              className={`text-xl sm:text-2xl font-black tracking-tight ${
+              className={`text-lg min-[380px]:text-xl sm:text-2xl font-black tracking-tight ${
                 isDark ? 'text-white' : 'text-[#081747]'
               }`}
             >
@@ -119,13 +119,14 @@ export const GanitGriddLogo: React.FC<GanitGriddLogoProps> = ({
           </div>
           <div className="flex items-center space-x-1.5 mt-1">
             <span
-              className={`text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.18em] ${
+              className={`text-[9px] sm:text-[10px] font-extrabold uppercase whitespace-nowrap tracking-[0.08em] min-[380px]:tracking-[0.18em] ${
                 isDark ? 'text-blue-300' : 'text-slate-500'
               }`}
             >
               Math & Science Academy
             </span>
-            <span className={`inline-block w-1 h-1 rounded-full bg-amber-500 ${hideTaglineOnXl ? 'xl:hidden 2xl:inline-block' : ''}`}></span>
+            {/* Separator dot only shows alongside the "STEM & Olympiads" tagline (md+) */}
+            <span className={`hidden md:inline-block w-1 h-1 rounded-full bg-amber-500 ${hideTaglineOnXl ? 'xl:hidden 2xl:inline-block' : ''}`}></span>
             <span
               className={`text-[9px] sm:text-[10px] font-semibold hidden md:inline tracking-wider ${
                 isDark ? 'text-slate-400' : 'text-slate-400'

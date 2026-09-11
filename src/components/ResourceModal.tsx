@@ -17,15 +17,15 @@ export const ResourceModal: React.FC<ResourceModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
-        
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="bg-white rounded-t-3xl sm:rounded-3xl max-w-lg w-full max-h-[92dvh] sm:max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200">
+
         {/* Header */}
-        <div className="bg-[#0b1a48] text-white p-5 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <FileText className="w-5 h-5 text-amber-300" />
-            <div>
-              <h3 className="font-extrabold text-base tracking-wide">
+        <div className="bg-[#0b1a48] text-white p-4 sm:p-5 flex items-center justify-between gap-3 flex-shrink-0">
+          <div className="flex items-center space-x-2 min-w-0">
+            <FileText className="w-5 h-5 text-amber-300 flex-shrink-0" />
+            <div className="min-w-0">
+              <h3 className="font-extrabold text-sm sm:text-base tracking-wide">
                 {category}
               </h3>
               <span className="text-[10px] text-blue-200">
@@ -33,13 +33,13 @@ export const ResourceModal: React.FC<ResourceModalProps> = ({
               </span>
             </div>
           </div>
-          <button onClick={onClose} className="text-slate-300 hover:text-white p-1">
+          <button onClick={onClose} aria-label="Close" className="text-slate-300 hover:text-white p-1 flex-shrink-0">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-4">
+        <div className="p-5 sm:p-6 space-y-4 overflow-y-auto overscroll-contain">
           <div className="flex items-center space-x-2 text-xs text-slate-500">
             <Calendar className="w-4 h-4 text-blue-700" />
             <span>Updated for UPSC / TNPSC Prelims & Mains Syllabus</span>
@@ -56,7 +56,7 @@ export const ResourceModal: React.FC<ResourceModalProps> = ({
 
           <div className="space-y-2 text-xs text-slate-700">
             <span className="font-bold text-slate-900 block">Available Materials:</span>
-            <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between">
+            <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-3">
               <div className="flex items-center space-x-2">
                 <FileText className="w-4 h-4 text-red-600" />
                 <span className="font-medium">Complete PDF Handout (Tamil & English)</span>
@@ -69,7 +69,7 @@ export const ResourceModal: React.FC<ResourceModalProps> = ({
                 <Download className="w-4 h-4" />
               </button>
             </div>
-            <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between">
+            <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-3">
               <div className="flex items-center space-x-2">
                 <ExternalLink className="w-4 h-4 text-blue-600" />
                 <span className="font-medium">Daily 10 MCQs Practice Quiz</span>

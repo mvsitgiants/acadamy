@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-50 bg-white shadow-xs border-b border-slate-100">
       <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between gap-2 h-16 sm:h-20">
           
           {/* Logo Brand: GanitGridd with Math & Science Vector Icon */}
           <div 
@@ -275,11 +275,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Mobile menu trigger - ONLY VISIBLE ON SCREENS LESS THAN xl (< 1280px) */}
-          <div className="flex xl:hidden items-center space-x-2">
+          <div className="flex xl:hidden items-center space-x-1.5 sm:space-x-2 flex-shrink-0">
+            {/* Hidden on the narrowest phones (<360px) so the logo fits; Enroll is also in the drawer */}
             <button
               id="btn-mobile-enroll"
               onClick={() => onOpenEnroll()}
-              className="px-3 py-1.5 rounded-full bg-[#081747] text-amber-300 text-xs font-black shadow-xs cursor-pointer"
+              className="hidden min-[360px]:block px-3.5 py-2 rounded-full bg-[#081747] text-amber-300 text-xs font-black shadow-xs cursor-pointer"
             >
               Enroll
             </button>
@@ -288,6 +289,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-slate-700 hover:text-[#081747] rounded-md focus:outline-hidden cursor-pointer"
               aria-label="Toggle navigation"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -298,67 +300,74 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer (Only under 1280px) */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1.5 shadow-xl animate-in slide-in-from-top duration-200">
+        <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-xl max-h-[calc(100dvh-4rem)] sm:max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain animate-in slide-in-from-top duration-200">
           <button
             onClick={() => handleNavClick('about')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'about' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'about' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             About Us
           </button>
           <button
             onClick={() => handleNavClick('courses')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'courses' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'courses' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             Courses Catalog
           </button>
           <button
             onClick={() => handleNavClick('admissions')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'admissions' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'admissions' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             Admissions
           </button>
           <button
             onClick={() => handleNavClick('exams')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'exams' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'exams' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             Exam & Syllabus Guide
           </button>
           <button
             onClick={() => handleNavClick('resources')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'resources' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'resources' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             Study Resources & Materials
           </button>
           <button
             onClick={() => handleNavClick('blog')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'blog' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'blog' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             Blog & Preparation Insights
           </button>
           <button
             onClick={() => handleNavClick('gallery')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'gallery' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'gallery' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             Campus & Gallery
           </button>
           <button
             id="nav-mobile-faq"
             onClick={() => handleNavClick('faq')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'faq' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'faq' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             FAQ
           </button>
           <button
             onClick={() => handleNavClick('contact')}
-            className={`block w-full text-left py-2 px-3 text-sm font-semibold rounded-lg ${currentPage === 'contact' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            className={`block w-full text-left py-3 px-3 text-sm font-semibold rounded-lg ${currentPage === 'contact' ? 'text-blue-900 font-bold bg-blue-50' : 'text-slate-700 hover:bg-slate-50'}`}
           >
             Contact & Location
           </button>
 
           <div className="pt-3 border-t border-slate-100 flex flex-col space-y-2">
             <button
+              onClick={() => { setMobileMenuOpen(false); onOpenEnroll(); }}
+              className="w-full py-3 rounded-full bg-[#081747] text-amber-300 text-xs font-black flex items-center justify-center space-x-1.5"
+            >
+              <GraduationCap className="w-3.5 h-3.5" />
+              <span>Enroll Now</span>
+            </button>
+            <button
               onClick={() => { setMobileMenuOpen(false); onOpenAccount(); }}
-              className="w-full py-2.5 rounded-full bg-slate-100 text-[#081747] text-xs font-bold flex items-center justify-center space-x-1.5"
+              className="w-full py-3 rounded-full bg-slate-100 text-[#081747] text-xs font-bold flex items-center justify-center space-x-1.5"
             >
               <User className="w-3.5 h-3.5" />
               <span>My Account</span>

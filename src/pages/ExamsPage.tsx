@@ -325,10 +325,10 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
             </div>
 
             {/* Bottom Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100">
+            <div className="pt-4 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-between gap-3 border-t border-slate-100">
               <button
                 onClick={() => onOpenEnroll(activeExam.id)}
-                className="px-6 py-2.5 rounded-xl bg-[#081747] hover:bg-blue-900 text-white font-bold text-xs transition-colors shadow-md flex items-center space-x-2 cursor-pointer"
+                className="px-6 py-3 sm:py-2.5 rounded-xl bg-[#081747] hover:bg-blue-900 text-white font-bold text-xs transition-colors shadow-md flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <span>Enroll in {activeExam.name.split(' ')[0]} Batch</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -336,7 +336,7 @@ export const ExamsPage: React.FC<ExamsPageProps> = ({
 
               <button
                 onClick={onOpenContact}
-                className="px-4 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-semibold flex items-center space-x-1.5 cursor-pointer"
+                className="px-4 py-3 sm:py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-semibold flex items-center justify-center space-x-1.5 cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5 text-slate-500" />
                 <span>Request Detailed Syllabus Booklet</span>

@@ -253,16 +253,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <h3 className="text-xl sm:text-2xl font-black">Experience GanitGridd Firsthand</h3>
             <p className="text-xs sm:text-sm text-blue-200">Attend 2 free trial lectures or schedule an in-person campus orientation today.</p>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-col min-[420px]:flex-row items-center gap-3 w-full md:w-auto">
             <button
               onClick={onOpenContact}
-              className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold text-white transition-colors cursor-pointer"
+              className="w-full min-[420px]:w-auto px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold text-white transition-colors cursor-pointer"
             >
               Contact Campus
             </button>
             <button
               onClick={onOpenEnroll}
-              className="px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5 cursor-pointer"
+              className="w-full min-[420px]:w-auto justify-center px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5 cursor-pointer"
             >
               <span>Apply for Admission</span>
               <ArrowRight className="w-3.5 h-3.5" />

@@ -51,33 +51,33 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll }) => {
 
             {/* ADMISSION OPEN Headings */}
             <div className="space-y-0 select-none">
-              <h1 className="text-5xl sm:text-7xl xl:text-8xl 2xl:text-9xl font-black text-[#081747] tracking-tight uppercase leading-[0.9]">
+              <h1 className="text-[length:clamp(2.5rem,12.5vw,4.5rem)] sm:text-7xl xl:text-8xl 2xl:text-9xl font-black text-[#081747] tracking-tight uppercase leading-[0.9]">
                 ADMISSION
               </h1>
-              <h1 className="text-5xl sm:text-7xl xl:text-8xl 2xl:text-9xl font-black text-[#081747] tracking-tight uppercase leading-[0.9]">
+              <h1 className="text-[length:clamp(2.5rem,12.5vw,4.5rem)] sm:text-7xl xl:text-8xl 2xl:text-9xl font-black text-[#081747] tracking-tight uppercase leading-[0.9]">
                 OPEN
               </h1>
             </div>
 
             {/* NOW OPEN FOR REGISTRATIONS! */}
             <div className="pt-1">
-              <p className="text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl font-extrabold text-[#1d4ed8] tracking-wide uppercase">
+              <p className="text-lg sm:text-2xl lg:text-3xl 2xl:text-4xl font-extrabold text-[#1d4ed8] tracking-wide uppercase">
                 NOW OPEN FOR REGISTRATIONS!
               </p>
             </div>
 
             {/* Exam Badge Container */}
-            <div className="bg-white border border-slate-200/90 rounded-full px-6 sm:px-8 py-2.5 shadow-2xs inline-block">
-              <p className="text-xs sm:text-sm font-extrabold text-[#081747] tracking-wide text-center uppercase">
+            <div className="max-w-full bg-white border border-slate-200/90 rounded-2xl sm:rounded-full px-4 sm:px-8 py-2.5 shadow-2xs inline-block">
+              <p className="text-[11px] sm:text-sm font-extrabold text-[#081747] tracking-wide text-center uppercase">
                 UPSC | SSC | RRB | BANKING | RAILWAY
               </p>
-              <p className="text-xs sm:text-sm font-extrabold text-[#081747] tracking-wide text-center uppercase mt-0.5">
+              <p className="text-[11px] sm:text-sm font-extrabold text-[#081747] tracking-wide text-center uppercase mt-0.5">
                 TNPSC | TNUSRB
               </p>
             </div>
 
             {/* Actions Row: ENROLL NOW, Phone, Website with Plus */}
-            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm">
+            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-3 sm:gap-6 text-xs sm:text-sm">
               {/* Enroll Now Pill Button */}
               <button
                 id="btn-hero-enroll"

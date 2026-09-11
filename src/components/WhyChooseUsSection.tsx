@@ -82,64 +82,64 @@ export const WhyChooseUsSection: React.FC = () => {
               Why Choose Us
             </h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8">
               
               {/* Feature 1 */}
               <div className="flex flex-col items-center text-center group">
-                <div className="w-14 h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
-                  <ShieldCheck className="w-7 h-7 text-slate-900" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-1.5 sm:mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
+                  <ShieldCheck className="w-5 h-5 sm:w-7 sm:h-7 text-slate-900" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900">
+                <h3 className="font-bold text-[10px] min-[380px]:text-xs sm:text-sm text-slate-900 leading-tight">
                   Expert Faculty
                 </h3>
               </div>
 
               {/* Feature 2 */}
               <div className="flex flex-col items-center text-center group">
-                <div className="w-14 h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
-                  <Award className="w-7 h-7 text-slate-900" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-1.5 sm:mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
+                  <Award className="w-5 h-5 sm:w-7 sm:h-7 text-slate-900" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900">
+                <h3 className="font-bold text-[10px] min-[380px]:text-xs sm:text-sm text-slate-900 leading-tight">
                   Proven Success
                 </h3>
               </div>
 
               {/* Feature 3 */}
               <div className="flex flex-col items-center text-center group">
-                <div className="w-14 h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
-                  <UserCheck className="w-7 h-7 text-slate-900" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-1.5 sm:mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
+                  <UserCheck className="w-5 h-5 sm:w-7 sm:h-7 text-slate-900" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900">
+                <h3 className="font-bold text-[10px] min-[380px]:text-xs sm:text-sm text-slate-900 leading-tight">
                   Personalized Coaching
                 </h3>
               </div>
 
               {/* Feature 4 */}
               <div className="flex flex-col items-center text-center group">
-                <div className="w-14 h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
-                  <BookOpen className="w-7 h-7 text-slate-900" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-1.5 sm:mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
+                  <BookOpen className="w-5 h-5 sm:w-7 sm:h-7 text-slate-900" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900">
+                <h3 className="font-bold text-[10px] min-[380px]:text-xs sm:text-sm text-slate-900 leading-tight">
                   Comprehensive Materials
                 </h3>
               </div>
 
               {/* Feature 5 */}
               <div className="flex flex-col items-center text-center group">
-                <div className="w-14 h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
-                  <Lightbulb className="w-7 h-7 text-slate-900" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-1.5 sm:mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
+                  <Lightbulb className="w-5 h-5 sm:w-7 sm:h-7 text-slate-900" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900">
+                <h3 className="font-bold text-[10px] min-[380px]:text-xs sm:text-sm text-slate-900 leading-tight">
                   Innovative Methods
                 </h3>
               </div>
 
               {/* Feature 6 */}
               <div className="flex flex-col items-center text-center group">
-                <div className="w-14 h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
-                  <Headphones className="w-7 h-7 text-slate-900" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-slate-900 flex items-center justify-center mb-1.5 sm:mb-2.5 transition-transform group-hover:scale-110 bg-white/10">
+                  <Headphones className="w-5 h-5 sm:w-7 sm:h-7 text-slate-900" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900">
+                <h3 className="font-bold text-[10px] min-[380px]:text-xs sm:text-sm text-slate-900 leading-tight">
                   Student Support
                 </h3>
               </div>

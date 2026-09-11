@@ -156,9 +156,9 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({
 
       {/* Filter and Search Bar */}
       <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
-        <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-          
-          <div className="flex flex-wrap items-center gap-1.5">
+        <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-slate-200 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+
+          <div className="flex md:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
             {[
               { id: 'all', label: 'All Resources' },
               { id: 'daily', label: 'Current Affairs' },
@@ -169,7 +169,7 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex-shrink-0 ${
                   activeTab === tab.id
                     ? 'bg-[#081747] text-white shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
@@ -238,14 +238,14 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({
 
       {/* Subscription Callout */}
       <div className="bg-[#081747] text-white py-12">
-        <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
             <h3 className="text-xl sm:text-2xl font-black">Want daily study materials directly on WhatsApp?</h3>
             <p className="text-xs sm:text-sm text-blue-200 mt-1">Join our official GanitGridd Aspirants Broadcast Channel for free morning current affairs PDFs.</p>
           </div>
           <button
             onClick={onOpenEnroll}
-            className="px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5 flex-shrink-0 cursor-pointer"
+            className="w-full sm:w-auto justify-center px-6 py-3 sm:py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5 flex-shrink-0 cursor-pointer"
           >
             <span>Enroll for Full Study Kit</span>
             <ArrowRight className="w-3.5 h-3.5" />

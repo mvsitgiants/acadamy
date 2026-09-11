@@ -36,23 +36,25 @@ export const ChatWidget: React.FC = () => {
   return (
     <>
       {/* Bottom Left Floating WhatsApp / Help Badge matching screenshot */}
-      <div className="fixed bottom-5 left-5 z-40">
+      {/* Icon-only on phones so it doesn't cover page content; hidden while the chat panel is open on phones */}
+      <div className={`fixed bottom-4 left-4 sm:bottom-5 sm:left-5 z-40 ${chatOpen ? 'hidden sm:block' : ''}`}>
         <a
           href="https://wa.me/919442678741?text=Hello%20Kanchi%20Valluvan%20IAS%20Academy%2C%20I%20am%20interested%20in%20course%20admissions."
           target="_blank"
           rel="noreferrer"
-          className="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 border border-emerald-500"
+          aria-label="Chat with us on WhatsApp"
+          className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 border border-emerald-500"
           id="whatsapp-chat-button"
         >
-          <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-            <MessageCircle className="w-3.5 h-3.5 fill-white" />
+          <div className="w-7 h-7 sm:w-5 sm:h-5 rounded-full bg-white/20 flex items-center justify-center">
+            <MessageCircle className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-white" />
           </div>
-          <span>Hi, how can I help?</span>
+          <span className="hidden sm:inline">Hi, how can I help?</span>
         </a>
       </div>
 
       {/* Bottom Right Floating AI / Counselor Chat Widget */}
-      <div className="fixed bottom-5 right-5 z-40">
+      <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40">
         {!chatOpen ? (
           <button
             id="chat-toggle-btn"
@@ -63,7 +65,7 @@ export const ChatWidget: React.FC = () => {
             <MessageCircle className="w-6 h-6" />
           </button>
         ) : (
-          <div className="w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col h-[420px] animate-in slide-in-from-bottom duration-200">
+          <div className="w-[calc(100vw-2rem)] max-w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col h-[min(420px,calc(100dvh-6rem))] animate-in slide-in-from-bottom duration-200">
             {/* Header */}
             <div className="bg-[#0b1a48] text-white p-4 flex items-center justify-between">
               <div className="flex items-center space-x-2.5">
@@ -83,7 +85,8 @@ export const ChatWidget: React.FC = () => {
 
               <button
                 onClick={() => setChatOpen(false)}
-                className="text-slate-300 hover:text-white p-1 rounded-lg"
+                aria-label="Close chat"
+                className="text-slate-300 hover:text-white p-1 rounded-lg flex-shrink-0"
               >
                 <X className="w-5 h-5" />
               </button>

@@ -100,10 +100,10 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
 
       {/* Filter and Search Bar */}
       <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
-        <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-          
-          {/* Category Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
+        <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-slate-200 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+
+          {/* Category Tabs: horizontal scroll on phones instead of wrapping */}
+          <div className="flex md:flex-wrap items-center gap-1.5 w-full md:w-auto overflow-x-auto no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
             {[
               { id: 'all', label: 'All Programs' },
               { id: 'civil', label: 'Civil Services (UPSC/TNPSC)' },
@@ -114,7 +114,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
               <button
                 key={tab.id}
                 onClick={() => setSelectedFilter(tab.id as any)}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer flex-shrink-0 ${
                   selectedFilter === tab.id
                     ? 'bg-[#081747] text-white shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
@@ -141,7 +141,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
 
       {/* Courses Cards Grid */}
       <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
             <h2 className="text-xl sm:text-2xl font-black text-[#081747]">
               Available Programs ({filteredCourses.length})
@@ -152,7 +152,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           </div>
           <button
             onClick={() => onOpenEnroll()}
-            className="hidden sm:inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] font-bold text-xs shadow-xs transition-colors"
+            className="inline-flex items-center justify-center space-x-1.5 px-4 py-2.5 sm:py-2 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] font-bold text-xs shadow-xs transition-colors"
           >
             <span>Download All Syllabus PDFs</span>
             <Download className="w-3.5 h-3.5" />
@@ -291,21 +291,21 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
 
       {/* Bottom CTA */}
       <div className="bg-[#081747] text-white py-12">
-        <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
             <h3 className="text-xl sm:text-2xl font-black">Not sure which course is right for your background?</h3>
             <p className="text-xs sm:text-sm text-blue-200 mt-1">Speak with our senior academic counselor for a free 1-on-1 profile evaluation.</p>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-col min-[420px]:flex-row items-center gap-3 w-full md:w-auto">
             <button
               onClick={onOpenContact}
-              className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold text-white transition-colors"
+              className="w-full min-[420px]:w-auto px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold text-white transition-colors"
             >
               Talk to Counselor
             </button>
             <button
               onClick={() => onOpenEnroll()}
-              className="px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5"
+              className="w-full min-[420px]:w-auto justify-center px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-[#081747] text-xs font-black transition-transform hover:scale-105 shadow-md flex items-center space-x-1.5"
             >
               <span>Enroll Now</span>
               <ArrowRight className="w-3.5 h-3.5" />
