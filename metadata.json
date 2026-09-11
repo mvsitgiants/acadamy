@@ -1,0 +1,6 @@
+{
+  "name": "GanitGridd",
+  "description": "Official website of GanitGridd: Premier Math & Science Academy offering comprehensive coaching for STEM, competitive exams, and analytical excellence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
